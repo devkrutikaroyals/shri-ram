@@ -21,7 +21,7 @@ function Home() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
 
-  // WhatsApp number you gave (no extra 7)
+  // Correct WhatsApp number without spaces or +
   const whatsappNumber = "917798573786";
 
   useEffect(() => {
@@ -50,7 +50,7 @@ function Home() {
   }, [dropLocation]);
 
   const handleBookNow = () => {
-    // Prepare message with all form data
+    // Your original multi-line message text (do NOT change)
     const message = `Hello, I would like to book a ${rideType} ride!\n
 Pick-up Location: ${pickupLocation}\n
 Drop Location: ${dropLocation}\n
@@ -79,7 +79,11 @@ End Date: ${endDate}`;
           >
             <FontAwesomeIcon icon={faWhatsapp} size="lg" />
           </a>
-          <a href="tel:+919876543210" className="btn btn-light" style={{ borderRadius: "50%", padding: "10px 14px" }}>
+          <a
+            href="tel:+919876543210"
+            className="btn btn-light"
+            style={{ borderRadius: "50%", padding: "10px 14px" }}
+          >
             <FontAwesomeIcon icon={faPhoneAlt} size="lg" />
           </a>
         </div>
