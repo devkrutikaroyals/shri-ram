@@ -1,14 +1,35 @@
-/* Global Reset */
+/* ================= Global Reset & Base ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Import Celandine Font */
-@import url('https://fonts.cdnfonts.com/css/celandine');
+html {
+  font-size: 16px; /* Lock base font size */
+}
 
-/* Home Section */
+body {
+  font-size: 1rem;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: #fff;
+  color: #0a0a0a;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Font Defaults for Headings */
+h1, h2 {
+  font-family: 'Celandine', cursive;
+  font-weight: bold;
+}
+
+/* ================= Home Section ================= */
 .home {
   background-image: url("../images/bgnew1.jpg");
   background-size: cover;
@@ -23,9 +44,9 @@
   text-align: center;
   padding: 20px 10px 40px;
   position: relative;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
-/* Home Content */
 .home-content {
   margin-top: 100px;
   z-index: 2;
@@ -43,7 +64,7 @@
   color: white;
 }
 
-/* Ride Options Positioned Horizontally */
+/* ================= Ride Options ================= */
 .ride-options {
   margin-top: 40px;
   display: flex;
@@ -59,9 +80,10 @@
   border: 2px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  user-select: none;
 }
 
 .ride-option-button.active {
@@ -76,7 +98,7 @@
   transform: scale(1.05);
 }
 
-/* Booking Section */
+/* ================= Booking Section ================= */
 .booking-section {
   background-color: #e8c27b;
   padding: 25px;
@@ -97,7 +119,7 @@
   font-family: 'Celandine', cursive;
 }
 
-/* Form Layout */
+/* Form layout */
 .form-group-row {
   display: flex;
   flex-wrap: wrap;
@@ -136,64 +158,56 @@
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease;
   width: 100%;
 }
 
-/* Floating Button */
-.floating-button {
+.book-now-button:hover {
+  background-color: #0a2598;
+}
+
+/* ================= Floating Buttons ================= */
+.floating-buttons {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  z-index: 1000;
+  gap: 14px;
+  align-items: flex-end;
 }
 
-.main-button {
-  background-color: #012c98;
-  color: white;
-  border: none;
+.floating-buttons .btn {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.expanded-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.whatsapp-button,
-.call-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
   color: white;
-  text-decoration: none;
+  cursor: pointer;
 }
 
-.whatsapp-button {
-  background-color: #25d366;
+.floating-buttons .btn-success {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.7);
 }
 
-.call-button {
-  background-color: #0a3ca9;
+.floating-buttons .btn-light {
+  background: linear-gradient(135deg, #0a3ca9, #004aad);
+  box-shadow: 0 0 12px rgba(10, 60, 169, 0.7);
 }
 
-/* Responsive */
+.floating-buttons .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ================= Responsive Design ================= */
 @media (max-width: 768px) {
   .home-content {
     margin-top: 60px;
@@ -226,33 +240,23 @@
   .form-group-row {
     flex-direction: column;
   }
+}
 
-  .floating-button {
-    bottom: 15px;
+@media (max-width: 576px) {
+  .floating-buttons {
     right: 15px;
+    bottom: 20px;
+    gap: 12px;
   }
 
-  .main-button {
+  .floating-buttons .btn {
     width: 50px;
     height: 50px;
     font-size: 20px;
   }
-
-  .whatsapp-button,
-  .call-button {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-  }
 }
 
-/* Font Defaults */
-h1, h2 {
-  font-family: 'Celandine', cursive;
-  font-weight: bold;
-}
-
-/* AOS Transitions */
+/* ================= AOS Transitions ================= */
 [data-aos] {
   transition: all 0.3s ease-in-out;
 }

@@ -19,7 +19,7 @@ const TaxiFares = () => {
       title: "Sedan Cabs",
       image: sedan,
       models: "Toyota Etos, Suzuki Dzire, Hyundai Xcent or Similar",
-      ac: "2 Bags",
+      // "Air-Bags": "2 Bags",
       capacity: "4 Passenger",
       limit: "250Km | 12 Hrs",
       animation: "fade-right",
@@ -28,7 +28,7 @@ const TaxiFares = () => {
       title: "SUV Cabs",
       image: suv,
       models: "Mahindra Marazzo,  Maruti Ertiga, Mahindra Xylo or Similar",
-      ac: "5 Bags",
+      // ac: "5 Bags",
       capacity: "6 Passenger",
       limit: "300Km | 12 Hrs",
       animation: "fade-up",
@@ -37,7 +37,7 @@ const TaxiFares = () => {
       title: "SUV Premium Cabs",
       image: premium,
       models: "Toyota Innova Crysta or Similar",
-      ac: "5 Bags",
+      // ac: "5 Bags",
       capacity: "7/8 Passenger",
       limit: "300Km | 12 Hrs",
       animation: "fade-left",
@@ -46,7 +46,7 @@ const TaxiFares = () => {
       title: "Minivan",
       image: minivan,
       models: "Tempo Traveller or Similar",
-      ac: " 10 Bags",
+      // ac: " 10 Bags",
       capacity: "13/17 Passenger",
       limit: "400Km | 12 Hrs",
       animation: "zoom-in",
@@ -63,7 +63,7 @@ const TaxiFares = () => {
               <img src={car.image} alt={car.title} className="car-image" />
               <h3>{car.title}</h3>
               <p><strong>{car.models}</strong></p>
-              <p>AC: <strong>{car.ac}</strong></p>
+              {/* <p>Air-Bags: <strong>{car.Air-Bags}</strong></p> */}
               <p>Capacity: <strong>{car.capacity}</strong></p>
               <p>Limit: <strong>{car.limit}</strong></p>
               <p className="fare-note">(Price Excluded Toll-Tax & Parking)</p>

@@ -1,0 +1,82 @@
+/* Navbar.css */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e8bfa4;
+  padding: 12px 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #fce38a;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+}
+
+/* Left side - Contact info */
+.navbar-left {
+  display: flex;
+  gap: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  flex: 1 1 auto;
+  min-width: 250px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+/* Right side - Social icons */
+.navbar-right {
+  display: flex;
+  gap: 25px;
+  flex-shrink: 0;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #0b0b0b;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #fec146;
+  transform: scale(1.15);
+}/* New: Mobile View Adjustments */
+@media (max-width: 480px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-left {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .navbar-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .navbar-right {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+}

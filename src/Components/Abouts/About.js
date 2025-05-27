@@ -54,9 +54,8 @@ const AboutPage = () => {
               Choose from a wide variety of vehicles tailored to your travel
               needs, from compact cars to luxury options.
             </p>
-            <button onClick={() => toggleInfo("wideRange")}>
-              Get More Information
-            </button>
+          <button>Get More Information</button>
+
             {openInfo === "wideRange" && (
               <div className="extra-info">
                 <p>
