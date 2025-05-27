@@ -260,3 +260,18 @@ h1, h2 {
 [data-aos] {
   transition: all 0.3s ease-in-out;
 }
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+}
