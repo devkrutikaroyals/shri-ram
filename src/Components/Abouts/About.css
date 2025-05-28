@@ -4,6 +4,7 @@
   color: #2c3e50;
   margin: 0 auto;
   line-height: 1.6;
+  text-align: justify;
 }
 
 /* Banner Section */
@@ -29,6 +30,7 @@
   font-size: 1.2rem;
   color: #f4f6f7;
   animation: fadeIn 1.2s ease-in-out;
+  text-align: justify;
 }
 
 /* Why Choose Us Section */
@@ -41,7 +43,7 @@
 
 .why-choose-us h2 {
   font-size: 2.5rem;
-  margin-bottom: 30px; /* from second snippet */
+  margin-bottom: 30px;
   color: #e67e22;
   animation: fadeAndScale 1.5s ease-in-out;
 }
@@ -51,16 +53,13 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 100px; /* increased gap */
+  gap: 100px;
   margin-top: 20px;
   padding-bottom: 10px;
   -webkit-overflow-scrolling: touch;
   max-width: 100%;
-  
 }
 
-
-/* Scrollbar Styling for Webkit */
 .why-cards::-webkit-scrollbar {
   height: 8px;
 }
@@ -72,10 +71,10 @@
 
 /* Individual Card */
 .card {
-  flex: 0 0 280px;                /* Fixed width cards, no shrinking */
+  flex: 0 0 280px;
   background: white;
   padding: 25px 20px 30px 20px;
-  border-radius: 12px;
+  border-radius: 100px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInUp 2s ease-out;
@@ -83,13 +82,13 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 320px;
-  border-radius: 100px;
 }
 
 .card h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: #34495e;
+  text-align: justify;
 }
 
 .card p {
@@ -98,6 +97,7 @@
   color: #2c3e50;
   line-height: 1.5;
   flex-grow: 1;
+  text-align: justify;
 }
 
 /* Get More Information Button */
@@ -128,7 +128,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Extra Info Section - shows when button clicked */
+/* Extra Info Section */
 .extra-info {
   margin-top: 15px;
   background-color: #f9f9f9;
@@ -139,6 +139,7 @@
   color: #34495e;
   line-height: 1.4;
   animation: fadeIn 0.8s ease forwards;
+  text-align: justify;
 }
 
 /* Footer Section */
@@ -156,9 +157,70 @@
   font-weight: 600;
 }
 
-/* Keyframe Animations */
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .card {
+    flex: 0 0 240px;
+  }
 
-/* Zoom In Effect */
+  .banner-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .why-choose-us h2 {
+    font-size: 2rem;
+  }
+
+  .card button {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .banner-section p {
+    font-size: 1rem;
+  }
+
+  .card {
+    flex: 0 0 200px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    flex: 0 0 180px;
+    padding: 20px;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .card button {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
+}
+
+/* Animations */
 @keyframes zoomIn {
   from {
     transform: scale(0.8);
@@ -170,7 +232,6 @@
   }
 }
 
-/* Fade and Scale Effect */
 @keyframes fadeAndScale {
   from {
     opacity: 0;
@@ -182,7 +243,6 @@
   }
 }
 
-/* Fade In Effect */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -192,7 +252,6 @@
   }
 }
 
-/* Fade In Up Effect */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -204,7 +263,6 @@
   }
 }
 
-/* Pulse Effect (For Button) */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -217,7 +275,6 @@
   }
 }
 
-/* Slide In From Bottom */
 @keyframes slideInFromBottom {
   from {
     opacity: 0;
