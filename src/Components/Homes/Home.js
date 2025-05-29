@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
@@ -20,18 +21,14 @@ function Home() {
   const [carType, setCarType] = useState("Sedan - 5 Seats");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [pickupTime, setPickupTime] = useState(""); // New state for pickup time
 
-  // Correct WhatsApp number without spaces or +
   const whatsappNumber = "917798573786";
 
   useEffect(() => {
     AOS.init({ duration: 1200, once: true });
-
-    // Load drop location from localStorage if present
     const savedDrop = localStorage.getItem("dropLocation");
-    if (savedDrop) {
-      setDropLocation(savedDrop);
-    }
+    if (savedDrop) setDropLocation(savedDrop);
   }, []);
 
   useEffect(() => {
@@ -44,24 +41,20 @@ function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Save drop location in localStorage when it changes
   useEffect(() => {
     localStorage.setItem("dropLocation", dropLocation);
   }, [dropLocation]);
 
   const handleBookNow = () => {
-    // Your original multi-line message text (do NOT change)
     const message = `Hello, I would like to book a ${rideType} ride!\n
 Pick-up Location: ${pickupLocation}\n
 Drop Location: ${dropLocation}\n
 Car Type: ${carType}\n
 Start Date: ${startDate}\n
+Pickup Time: ${pickupTime}\n
 End Date: ${endDate}`;
 
-    // Encode message for URL
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    // Open WhatsApp chat in new tab
     window.open(whatsappLink, "_blank");
   };
 
@@ -93,7 +86,6 @@ End Date: ${endDate}`;
           <h1>Welcome to Shriram Cabs</h1>
           <p>Ride Comfortably, Arrive Safely!</p>
 
-          {/* Ride Type Buttons */}
           <div className={`ride-options ${showButtons ? "visible" : "hidden"}`} data-aos="fade-up">
             {["One Way", "Outstation", "Local", "Airport"].map((option) => (
               <button
@@ -106,8 +98,7 @@ End Date: ${endDate}`;
             ))}
           </div>
 
-          {/* Booking Form */}
-          <div className="booking-section" data-aos="fade-up" style={{ marginTop: "20px" }}>
+          <div className="booking-section" data-aos="fade-up">
             <h3>Selected Ride: {rideType}</h3>
 
             <div className="form-group-row">
@@ -167,6 +158,16 @@ End Date: ${endDate}`;
 
             <div className="form-group-row">
               <div className="form-group">
+                <label htmlFor="pickup-time">Pickup Time</label>
+                <input
+                  type="time"
+                  id="pickup-time"
+                  className="form-control"
+                  value={pickupTime}
+                  onChange={(e) => setPickupTime(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
                 <label htmlFor="end-date">End Date</label>
                 <input
                   type="date"
@@ -182,7 +183,7 @@ End Date: ${endDate}`;
               className="book-now-button btn btn-primary"
               onClick={handleBookNow}
               data-aos="flip-up"
-              disabled={!dropLocation} // disable if drop location empty
+              disabled={!dropLocation}
               title={!dropLocation ? "Please enter Drop Location" : ""}
             >
               Book Your Ride Now
