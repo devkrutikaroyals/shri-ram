@@ -73,7 +73,7 @@ End Date: ${endDate}`;
             <FontAwesomeIcon icon={faWhatsapp} size="lg" />
           </a>
           <a
-            href="tel:+919876543210"
+            href="tel:+917798573786"
             className="btn btn-light"
             style={{ borderRadius: "50%", padding: "10px 14px" }}
           >
